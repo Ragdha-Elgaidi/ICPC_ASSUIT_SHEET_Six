@@ -11,7 +11,7 @@
 
 using namespace std;
 
-long long num(char c)
+ll num(char c)
 { 
 	if (c >= '0' && c <= '9')
 	{
@@ -24,7 +24,7 @@ long long num(char c)
 	}
 }
 
-char reNum(long long num)
+char reNum(ll num)
 { 
 	if (num >= 0 && num <= 9) 
 	{
@@ -36,11 +36,11 @@ char reNum(long long num)
 	}
 }
 
-long long toDec(char* value, long long base)
+ll toDec(char* value, ll base)
 {
-	long long size = strlen(value);
-	long long power = 1; 
-	long long result = 0;
+	ll size = strlen(value);
+	ll power = 1; 
+	ll result = 0;
 
 	for (int i = size - 1; i >= 0; i--)
 	{ 
@@ -51,7 +51,7 @@ long long toDec(char* value, long long base)
 	return result;
 }
 
-char* fromDec(char res[], long long base, long long number)
+char* fromDec(char res[], ll base, ll number)
 {
 	int index = 0; 
 
@@ -79,18 +79,19 @@ int main()
 		char arr[35] = { "" };
 		cin >> arr;
 
-		long long base;
+		ll base;
 		cin >> base;
 
 		cout << toDec(arr, base);
 	}
 	else
 	{
-		long long number, base;
+		ll number, base;
 		cin >> number >> base;
 
 		char res[100];
 		cout << fromDec(res, base, number);
 	}
+
 	return 0;
 }
